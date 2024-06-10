@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .section {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            background-color: #fff;
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-top: 0;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .page-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .page-link {
+            flex: 1 0 200px;
+            padding: 10px 15px;
+            background-color: #e0e0e0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .page-link:hover {
+            background-color: #ccc;
+        }
+        .content-container {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            background-color: #fff;
+            min-width: 250px;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+    </style>
+    <script>
+        function showContent(id) {
+            var sections = document.getElementsByClassName('content');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>MLCQ Multi-Label Evaluation Results</h1>
+
+    <div class="section-container">
+        <div class="section">
+            <h2>Class Based Evaluation</h2>
+            <div class="page-links">
+                <a class="page-link" href="#" onclick="showContent('class-metric')">Class Metric Based</a>
+                <a class="page-link" href="#" onclick="showContent('class-code-embeddings')">Class Code Embeddings</a>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Method Based Evaluation</h2>
+            <div class="page-links">
+                <a class="page-link" href="#" onclick="showContent('method-metric')">Method Metric Based</a>
+                <a class="page-link" href="#" onclick="showContent('method-code-embeddings')">Method Code Embeddings</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div id="class-metric" class="content">
+            <object data="Output_Multi_Label_Class_Metric.html" width="100%" height="800px">
+                <p>Unable to display the content. Please <a href="Output_Multi_Label_Class_Metric.html">click here</a> to view it.</p>
+            </object>
+        </div>
+        <div id="class-code-embeddings" class="content">
+            <object data="Output_Multi_Label_Class_Code_Embeddings.html" width="100%" height="800px">
+                <p>Unable to display the content. Please <a href="Output_Multi_Label_Class_Code_Embeddings.html">click here</a> to view it.</p>
+            </object>
+        </div>
+        <div id="method-metric" class="content">
+            <object data="Output_Multi_Label_Method_Metric.html" width="100%" height="800px">
+                <p>Unable to display the content. Please <a href="Output_Multi_Label_Method_Metric.html">click here</a> to view it.</p>
+            </object>
+        </div>
+        <div id="method-code-embeddings" class="content">
+            <object data="Output_Multi_Label_Method_Code_Embeddings.html" width="100%" height="800px">
+                <p>Unable to display the content. Please <a href="Output_Multi_Label_Method_Code_Embeddings.html">click here</a> to view it.</p>
+            </object>
+        </div>
+    </div>
+
+    <script>
+        function showContent(id) {
+            var sections = document.getElementsByClassName('content');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
